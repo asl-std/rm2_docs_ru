@@ -20,10 +20,10 @@
 @font-face {
     font-family: 'minecraftfont';
 
-    src: url('https://www.recipemanager.dev/fonts/minecraftfont/minecraftfont.eot');
-    src: url('https://www.recipemanager.dev/fonts/minecraftfont/minecraftfont.eot?#iefix') format('embedded-opentype'),
-         url('https://www.recipemanager.dev/fonts/minecraftfont/minecraftfont.woff') format('woff'),
-         url('https://www.recipemanager.dev/fonts/minecraftfont/minecraftfont.ttf') format('truetype');
+    src: url('https://asl-std.github.io/rm2_docs_ru/fonts/minecraftfont/minecraftfont.eot');
+    src: url('https://asl-std.github.io/rm2_docs_ru/fonts/minecraftfont/minecraftfont.eot?#iefix') format('embedded-opentype'),
+         url('https://asl-std.github.io/rm2_docs_ru/fonts/minecraftfont/minecraftfont.woff') format('woff'),
+         url('https://asl-std.github.io/rm2_docs_ru/minecraftfont/minecraftfont.ttf') format('truetype');
 }
 
 $font-minecraft: 'minecraftfont', Arial, serif;
@@ -78,7 +78,7 @@ $font-minecraft: 'minecraftfont', Arial, serif;
 
 .slot--potionresult {
     float: left;
-    background-image: url('https://www.recipemanager.dev/img/icons/16/slot-potion_bg.png?v=1');
+    background-image: url('https://asl-std.github.io/rm2_docs_ru/img/icons/16/slot-potion_bg.png?v=1');
     background-size: cover;
     @include scalepixels;
 }
@@ -232,7 +232,7 @@ $font-minecraft: 'minecraftfont', Arial, serif;
     right: 23px;
     width: 18px;
     height: 18px;
-    background-image: url('https://www.recipemanager.dev/img/icons/zoom-out.png?v=1');
+    background-image: url('https://asl-std.github.io/rm2_docs_ru/img/icons/zoom-out.png?v=1');
     background-size: cover;
     @include scalepixels();
 
@@ -264,7 +264,7 @@ $font-minecraft: 'minecraftfont', Arial, serif;
     right: 3px;
     width: 18px;
     height: 18px;
-    background-image: url('https://www.recipemanager.dev/img/icons/zoom-in.png?v=1');
+    background-image: url('https://asl-std.github.io/rm2_docs_ru/img/icons/zoom-in.png?v=1');
     background-size: cover;
     @include scalepixels();
 

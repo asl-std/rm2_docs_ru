@@ -7,11 +7,11 @@
             <meta name="description" content="{{ page.description }}">
         {%- endif %}
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/css/vendor.css">
-        <link rel="stylesheet" href="/css/app.css">
+        <link rel="stylesheet" href="/rm2_docs_ru/css/vendor.css">
+        <link rel="stylesheet" href="/rm2_docs_ru/css/app.css">
         {% if page.css -%}
         {%- for stylesheet in page.css -%}
-            <link rel="stylesheet" href="{{ site.baseurl }}/css/{{ stylesheet }}.css">
+            <link rel="stylesheet" href="{{ site.baseurl }}/rm2_docs_ru/css/{{ stylesheet }}.css">
         {% endfor -%}
         {%- endif %}
     </head>
@@ -24,7 +24,7 @@
 
         {% if page.js -%}
         {%- for script in page.js -%}
-            <script type="text/javascript" src="{{ site.baseurl }}/js/{{ script }}.js"></script>
+            <script type="text/javascript" src="{{ site.baseurl }}/rm2_docs_ru/js/{{ script }}.js"></script>
         {% endfor -%}
         {%- endif %}
     </body>
