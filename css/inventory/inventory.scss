@@ -1,0 +1,589 @@
+---
+---
+@mixin lineshadow($color) {
+    text-shadow: 2px 2px 0 $color;
+
+    .inventory__zoom1_5 & {
+        text-shadow: 3px 3px 0 $color;
+    }
+
+    .inventory__zoom2 & {
+        text-shadow: 4px 4px 0 $color;
+    }
+}
+
+@mixin scalepixels() {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+@font-face {
+    font-family: 'minecraftfont';
+
+    src: url('https://www.recipemanager.dev/fonts/minecraftfont/minecraftfont.eot');
+    src: url('https://www.recipemanager.dev/fonts/minecraftfont/minecraftfont.eot?#iefix') format('embedded-opentype'),
+         url('https://www.recipemanager.dev/fonts/minecraftfont/minecraftfont.woff') format('woff'),
+         url('https://www.recipemanager.dev/fonts/minecraftfont/minecraftfont.ttf') format('truetype');
+}
+
+$font-minecraft: 'minecraftfont', Arial, serif;
+
+.slot {
+    position: relative;
+    background-color: #8b8b8b;
+    width: 32px;
+    height: 32px;
+    border-left: 2px solid #373737;
+    border-top: 2px solid #373737;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    text-align: center;
+
+    .inventory__zoom1_5 & {
+        width: 48px;
+        height: 48px;
+        border-width: 3px;
+    }
+
+    .inventory__zoom2 & {
+        width: 64px;
+        height: 64px;
+        border-width: 4px;
+    }
+
+    &:hover {
+        background-color: #c5c5c5;
+    }
+
+    img {
+        width: 32px;
+        position: relative;
+        z-index: 10;
+        @include scalepixels();
+
+        .inventory__zoom1_5 & {
+            width: 48px;
+        }
+
+        .inventory__zoom2 & {
+            width: 64px;
+        }
+    }
+}
+
+.slot--nobg {
+    border: none;
+    background-color: inherit;
+}
+
+.slot--potionresult {
+    float: left;
+    background-image: url('https://www.recipemanager.dev/img/icons/16/slot-potion_bg.png?v=1');
+    background-size: cover;
+    @include scalepixels;
+}
+
+.slot--result {
+    float: left;
+    width: 48px;
+    height: 48px;
+
+    .inventory__zoom1_5 & {
+        width: 72px;
+        height: 72px;
+    }
+
+    .inventory__zoom2 & {
+        width: 96px;
+        height: 96px;
+    }
+
+    &:hover {
+        background-color: #8b8b8b;
+
+        &:before {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
+            content: "";
+            background-color: #c5c5c5;
+            display: block;
+            z-index: 0;
+
+            .inventory__zoom1_5 & {
+                top: 12px;
+                left: 12px;
+                right: 12px;
+                bottom: 12px;
+            }
+
+            .inventory__zoom2 & {
+                top: 16px;
+                left: 16px;
+                right: 16px;
+                bottom: 16px;
+            }
+        }
+    }
+
+    img {
+        margin-top: 8px;
+
+        .inventory__zoom1_5 & {
+            margin-top: 12px;
+        }
+
+        .inventory__zoom2 & {
+            margin-top: 16px;
+        }
+    }
+}
+
+.slot__cycle {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &.active {
+        display: block;
+    }
+}
+
+.detail {
+    display: none;
+}
+
+.chance {
+    position: absolute;
+    top: 108%;
+    right: 1px;
+    pointer-events: none;
+    font-size: 12px;
+    font-family: $font-minecraft;
+    text-shadow: 2px 2px 0 #aaa;
+
+    .inventory__zoom1_5 & {
+        font-size: 18px;
+    }
+
+    .inventory__zoom2 & {
+        font-size: 18px;
+    }
+}
+
+.amount {
+    position: absolute;
+    bottom: 0;
+    right: -2px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 16px;
+    cursor: default;
+    z-index: 10;
+    font-family: $font-minecraft;
+    @include lineshadow(#373737);
+
+    .inventory__zoom1_5 & {
+        font-size: 24px;
+        line-height: 24px;
+    }
+
+    .inventory__zoom2 & {
+        font-size: 32px;
+        line-height: 32px;
+    }
+}
+
+.inventory {
+    position: relative;
+    display: table;
+    background-color: #c6c6c6;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 2px solid #000;
+
+    .inventory__zoom1_5 & {
+        padding: 15px;
+        border-width: 3px;
+    }
+
+    .inventory__zoom2 & {
+        padding: 20px;
+        border-width: 4px;
+    }
+
+    &:before {
+
+    }
+
+    &:after {
+
+    }
+}
+
+.inventory__zoom-out {
+    display: none;
+    position: absolute;
+    bottom: 3px;
+    right: 23px;
+    width: 18px;
+    height: 18px;
+    background-image: url('https://www.recipemanager.dev/img/icons/zoom-out.png?v=1');
+    background-size: cover;
+    @include scalepixels();
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    .inventory__zoom1_5 & {
+        display: block;
+        width: 27px;
+        height: 27px;
+        bottom: 4px;
+        right: 32px;
+    }
+
+    .inventory__zoom2 & {
+        display: block;
+        width: 36px;
+        height: 36px;
+        bottom: 5px;
+        right: 5px;
+    }
+}
+
+.inventory__zoom-in {
+    display: block;
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    width: 18px;
+    height: 18px;
+    background-image: url('https://www.recipemanager.dev/img/icons/zoom-in.png?v=1');
+    background-size: cover;
+    @include scalepixels();
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    .inventory__zoom1_5 & {
+        width: 27px;
+        height: 27px;
+        bottom: 4px;
+        right: 4px;
+    }
+    .inventory__zoom2 & {
+        display: none;
+    }
+}
+
+.inventory__wrap {
+    display: block;
+
+    .inventory {
+        display: inline-block;
+    }
+}
+
+.inventory__header {
+    position: relative;
+}
+
+.inventory__ingredients {
+    float: left;
+
+    .inventory--crafting & {
+        display: grid;
+        grid-template-columns: 36px 36px 36px;
+
+        .inventory__zoom1_5 & {
+            grid-template-columns: 54px 54px 54px;
+        }
+
+        .inventory__zoom2 & {
+            grid-template-columns: 72px 72px 72px;
+        }
+    }
+}
+
+.inventory__arrow {
+    float: left;
+    width: 44px;
+    height: 30px;
+    padding-left: 25px;
+    padding-right: 25px;
+
+    .inventory__zoom1_5 & {
+        width: 66px;
+        height: 45px;
+    }
+
+    .inventory__zoom2 & {
+        width: 88px;
+        height: 60px;
+    }
+
+    .slot {
+        margin: 0 auto;
+    }
+
+    > img {
+        padding-top: 2px;
+        max-width: 100%;
+    }
+}
+
+.cook_time {
+    font-size: 12px;
+    margin-left: -15px;
+    margin-right: -15px;
+    text-align: center;
+    font-family: $font-minecraft;
+    @include lineshadow(#aaa);
+
+    .inventory__zoom1_5 & {
+        font-size: 18px;
+    }
+
+    .inventory__zoom2 & {
+        font-size: 24px;
+    }
+}
+
+.burn_time {
+    font-size: 12px;
+    margin-left: 5px;
+    margin-top: 47px;
+    font-family: $font-minecraft;
+    @include lineshadow(#aaa);
+
+    .inventory__zoom1_5 & {
+        font-size: 18px;
+        margin-top: 65px;
+    }
+
+    .inventory__zoom2 & {
+        font-size: 24px;
+        margin-top: 89px;
+    }
+}
+
+.inventory__brewtimer {
+    width: 32px;
+    height: 56px;
+    padding: 2px;
+
+    .inventory__zoom1_5 & {
+        width: 48px;
+        height: 84px;
+    }
+
+    .inventory__zoom2 & {
+        width: 64px;
+        height: 112px;
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.inventory__burntimer {
+    width: 32px;
+    height: 32px;
+    padding: 2px;
+
+    .inventory__zoom1_5 & {
+        width: 48px;
+        height: 48px;
+    }
+
+    .inventory__zoom2 & {
+        width: 64px;
+        height: 64px;
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.inventory__result {
+    float: left;
+    padding-top: 28px;
+    padding-bottom: 28px;
+}
+
+.item-tooltip {
+    border-width: 2px;
+    border-style: solid;
+    border-color: #1e0f1e;
+    border-color: rgba(16,0,16,0.941);
+    background-color: #1e0f1e;
+    background-color: rgba(16,0,16,0.941);
+    border-radius: 3px;
+    display: none;
+    position: absolute;
+    z-index: 100;
+
+    &.active {
+        display: block;
+    }
+
+    .inventory__zoom1_5 & {
+        border-width: 3px;
+    }
+
+    .inventory__zoom2 & {
+        border-width: 4px;
+    }
+}
+
+.item-tooltip__detail {
+    padding: 2px 5px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #1e0f1e;
+    border-color: rgba(37,0,95,0.961);
+
+    .inventory__zoom1_5 & {
+        border-width: 3px;
+        padding: 3px 7.5px;
+    }
+
+    .inventory__zoom2 & {
+        border-width: 4px;
+        padding: 4px 10px;
+    }
+}
+
+.line {
+    color: #fff;
+    height: 20px;
+    font-size: 16px;
+    line-height: 16px;
+    font-family: $font-minecraft;
+    @include lineshadow(#373737);
+
+    &:first-of-type + .line {
+        padding-top: 3px;
+    }
+
+    .inventory__zoom1_5 & {
+        height: 30px;
+        font-size: 24px;
+        line-height: 24px;
+    }
+
+    .inventory__zoom2 & {
+        height: 40px;
+        font-size: 32px;
+        line-height: 32px;
+    }
+}
+
+.color-black {
+    color: #000;
+    @include lineshadow(#000);
+}
+
+.color-darkBlue {
+    color: #00a;
+    @include lineshadow(#00002a);
+}
+
+.color-darkGreen {
+    color: #0a0;
+    @include lineshadow(#002a00);
+}
+
+.color-darkAqua {
+    color: #0aa;
+    @include lineshadow(#002a2a);
+}
+
+.color-darkRed {
+    color: #a00;
+    @include lineshadow(#2a0000);
+}
+
+.color-darkPurple {
+    color: #a0a;
+    @include lineshadow(#2a002a);
+}
+
+.color-gold {
+    color: #fa0;
+    @include lineshadow(#2a2a00);
+}
+
+.color-gray {
+    color: #aaa;
+    @include lineshadow(#2a2a2a);
+}
+
+.color-darkGray {
+    color: #555;
+    @include lineshadow(#151515);
+}
+
+.color-blue {
+    color: #55f;
+    @include lineshadow(#15153f);
+}
+
+.color-green {
+    color: #5f5;
+    @include lineshadow(#153f15);
+}
+
+.color-aqua {
+    color: #5ff;
+    @include lineshadow(#153f3f);
+}
+
+.color-red {
+    color: #f55;
+    @include lineshadow(#3f1515);
+}
+
+.color-lightPurple {
+    color: #f5f;
+    @include lineshadow(#3f153f);
+}
+
+.color-yellow {
+    color: #ff5;
+    @include lineshadow(#3f3f15);
+}
+
+.color-white {
+    color: #fff;
+    @include lineshadow(#3f3f3f);
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.noitalic {
+    font-style: normal;
+}
