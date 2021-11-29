@@ -7,11 +7,11 @@
             <meta name="description" content="{{ page.description }}">
         {%- endif %}
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/rm2_docs_ru/css/vendor.css">
-        <link rel="stylesheet" href="/rm2_docs_ru/css/app.css">
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/vendor.css">
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/app.css">
         {% if page.css -%}
         {%- for stylesheet in page.css -%}
-            <link rel="stylesheet" href="{{ site.baseurl }}/rm2_docs_ru/css/{{ stylesheet }}.css">
+            <link rel="stylesheet" href="{{ site.baseurl }}/css/{{ stylesheet }}.css">
         {% endfor -%}
         {%- endif %}
     </head>
