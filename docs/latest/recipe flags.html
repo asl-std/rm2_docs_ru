@@ -4,35 +4,35 @@ title: Recipe Flags
 ---
 <div class='container-full'>
     <div class='doc-section__group'>
-        <h1 class='doc-section__group-title'>Recipe Flags</h1>
+        <h1 class='doc-section__group-title'>Флаги рецептов</h1>
         <pre>
-<b>WHAT ARE FLAGS ?</b>
-  Flags are the stuff that make a recipe very special! You can add various features to a recipe by using flags.
-  For examples see <a href='advanced recipes.html'><b>advanced recipes.html</b></a>.
+<b>ЧТО ТАКОЕ ФЛАГИ ?</b>
+  Флаги - это то, что делает рецепт особенным! Вы можете добавлять в рецепт различные функции, используя флаги.
+  Примеры см. <a href='advanced recipes.html'><b>advanced recipes.html</b></a>.
 
-<b>USING FLAGS</b>
-  Flags can be added in 4 'zones':
-  - at the beginning of the file - which are copied to all recipes from that file.
-  - after recipe type (CRAFT, COMBINE, etc) - where they affect that specific recipe, you may even overwrite file flags for that specific recipe!
-  - after recipe ingredients - to apply basic item requirements to a specific ingredient.
-  - after recipe's individual results - to apply flags for the result items.
+<b>ИСПОЛЬЗОВАНИЕ ФЛАГОВ</b>
+  Флаги можно добавлять в 4 'zones':
+  - в начале файла - которые копируются во все рецепты из этого файла.
+  - после типа рецепта (CRAFT, COMBINE и т. д.) - там, где они влияют на этот конкретный рецепт, вы даже можете перезаписать флаги файлов для этого конкретного рецепта!
+  - после ингредиентов рецепта - чтобы применить базовые требования к конкретному ингредиенту.
+  - после индивидуальных результатов рецепта - установить флажки для элементов результата.
 
-<b>ABOUT ARGUMENTS</b>
-  Flags have arguments but not always are they all required.
-  Arguments enclosed between &lt; and &gt; are required and those enclosed between [ and ] are optional.
-  Some arguments may have 'or false', that means you can just type false in there to make it do something special (most likely disable the flag or a feature)
+<b>ОБ АРГУМЕНТАХ</b>
+  У флагов есть аргументы, но они не всегда обязательны.
+  Аргументы, заключенные между & lt; и & gt; являются обязательными, а символы, заключенные между [и], не являются обязательными.
+  Некоторые аргументы могут иметь 'or false', это означает, что вы можете просто ввести false, чтобы он сделал что-то особенное (скорее всего, отключите флаг или функцию)
 
-<b>ALIASES</b>
-  They're just other names for the flag that you can use, they have no special effect if used, only for your preference.
+<b>НИКНЕЙМЫ</b>
+  Это просто другие имена для флага, которые вы можете использовать, они не имеют особого эффекта, если используются, только для ваших предпочтений.
 </pre>
     </div>
     <div class='doc-section__group clearfix'>
         <div class='table-of-contents'>
             <a id='contents'></a>
-            <h2 class='table-of-contents__title'>Contents</h2>
+            <h2 class='table-of-contents__title'>СОДЕРЖАНИЕ</h2>
         </div>
         <div class='flaggroup'>
-            <span class='flagtype flagtype-recipe'>Recipe Flags</span>
+            <span class='flagtype flagtype-recipe'>Флаги рецептов</span>
             <ul class='flaggroup__list'>
                 <li><a href='#addtobook'><b>@addtobook</b></a></li>
                 <li><a href='#biome'><b>@biome</b></a></li>
@@ -83,7 +83,7 @@ title: Recipe Flags
             </ul>
         </div>
         <div class='flaggroup'>
-            <span class='flagtype flagtype-ingredient'>Ingredient Flags</span>
+            <span class='flagtype flagtype-ingredient'>Флаги ингредиентов</span>
             <ul class='flaggroup__list'>
                 <li><a href='#banneritem'><b>@banneritem</b></a></li>
                 <li><a href='#bookitem'><b>@bookitem</b></a></li>
@@ -114,7 +114,7 @@ title: Recipe Flags
             </ul>
         </div>
         <div class='flaggroup'>
-            <span class='flagtype flagtype-result'>Result Flags</span>
+            <span class='flagtype flagtype-result'>Флаги результатов</span>
             <ul class='flaggroup__list'>
                 <li><a href='#applyenchantment'><b>@applyenchantment</b></a></li>
                 <li><a href='#banneritem'><b>@banneritem</b></a></li>
@@ -186,376 +186,376 @@ title: Recipe Flags
         </div>
     </div>
     <div class='doc-section__group'>
-        <a href='#contents' class='back-to-top'>^ Contents</a><a id='addtobook'></a>
-        <h3 class='doc-section__title'>@addtobook &lt;book id&gt; [volume &lt;num&gt;]</h3>
+        <a href='#contents' class='back-to-top'>^ СОДЕРЖАНИЕ</a><a id='addtobook'></a>
+        <h3 class='doc-section__title'>@addtobook &lt;идентификатор книги&gt; [volume &lt;num&gt;]</h3>
         <pre>
-    <span class='flagtype flagtype-recipe'>Recipe</span>
+    <span class='flagtype flagtype-recipe'>Рецепт приготовления</span>
 
 <span>
-    This flag is a shortcut for quickly adding recipe(s) to books.
-    Using this flag more than once will overwrite the previous one.
+    Этот флаг - ярлык для быстрого добавления рецептов в книги.
+    Использование этого флага более одного раза приведет к перезаписи предыдущего.
 
-    The book must exist first, you must create it, see 'recipe books.html' for how to do that.
+    Сначала книга должна существовать, вы должны ее создать, см. 'recipe books.html' чтобы узнать, как это сделать.
 
-    The '&lt;book id&gt;' argument must be an existing book's ID/filename, case insensitive.
-    Optionally you can specify which volume to add it to, otherwise it will be added in its 'recipes' node and left to be added automatically to the latest volume with free slots.
+    '&lt;идентификатор книги&gt;' Аргумент должен быть идентификатором / именем существующей книги без учета регистра.
+    При желании вы можете указать, в какой том его добавить, в противном случае он будет добавлен в его узел 'recipes' и останется для автоматического добавления в последний том со свободными слотами.
 
-    NOTE: To properly remove recipes from books you must first remove this flag (to avoid re-adding them) then go to the book's YML file and remove them from there as well.
+    ПРИМЕЧАНИЕ. Чтобы правильно удалить рецепты из книг, вы должны сначала удалить этот флаг (чтобы не добавлять их повторно), затем перейдите в файл YML книги и удалите их оттуда.
 </span>
 
-    Setting to 'false' or 'remove' will disable the flag.
+    Установка значения 'false' или  'remove' отключит флаг.
 
-    <b>Examples:</b>
-      @addtobook testing book // matches a 'Testing Book.yml' book for example
-      @addtobook random stuff volume 3 // matches a 'Random Stuff.yml' with volume 3 book for example
+    <b>Примеры:</b>
+      @addtobook testing book // соответствует, например, книге 'Testing Book.yml' 
+      @addtobook random stuff volume 3 // соответствует  'Random Stuff.yml' с книгой тома 3, например
 
-    <b>Aliases:</b> @recipebook
+    <b>Псевдонимы:</b> @recipebook
 </pre>
     </div>
     <div class='doc-section__group'>
-        <a href='#contents' class='back-to-top'>^ Contents</a><a id='applyenchantment'></a>
-        <h3 class='doc-section__title'>@applyenchantment &lt;arguments&gt;</h3>
+        <a href='#contents' class='back-to-top'>^ СОДЕРЖАНИЕ</a><a id='applyenchantment'></a>
+        <h3 class='doc-section__title'>@applyenchantment &lt;аргументы&gt;</h3>
         <pre>
-    <span class='flagtype flagtype-result'>Result</span>
+    <span class='flagtype flagtype-result'>Результат</span>
 
 <span>
-    Applies the enchantments from books onto the result
-    Using this flag more than once will overwrite the previous one.
+    Применяет чары из книг на результат
+    Использование этого флага более одного раза приведет к перезаписи предыдущего.
 
-    As '&lt;arguments&gt;' you must define at least one feature to copy from the ingredient to the result.
-    Arguments can be one or more of the following, separated by | character:
-      ingredientaction &lt;action&gt; = (default largest) merge action for all of the ingredients
-      resultaction &lt;action&gt;     = (default largest) merge action applied to the result
-      ignorelevel               = Ignore enchantment level restrictions
-      maxlevel &lt;level&gt;          = Restrict the maximum level
-      onlybooks                 = Only copies enchantments from Enchanted Books. Without this, all item enchantments will be copied
+    Как  '&lt;arguments&gt;' вы должны определить по крайней мере одну функцию, которую нужно скопировать из ингредиента в результат.
+    Аргументы могут быть одним или несколькими из следующих, разделенных знаком | персонаж:
+      ингредиент действие &lt;действие &gt; = (по умолчанию наибольшее)  действие слияния для всех ингредиентов
+      resultдействие  &lt;действие &gt;     = (по умолчанию наибольшее)  действие слияния для всех ингредиентов
+      ignorelevel               = Игнорировать ограничения уровня чар
+      maxlevel &lt;level&gt;          =Ограничить максимальный уровень
+      onlybooks                 = Копирует только чары из Зачарованных Книг. Без этого все чары предметов будут скопированы.
 
-    Actions include:
-      largest = Use the largest of the two enchantments if two are merged (Sharpness I + Sharpness III = Sharpness III)
-      combine = Add the enchantment levels together (Sharpness I + Sharpness III = Sharpness IV)
-      anvil   = Combine enchantments similar to anvils (Sharpness I + Sharpness II = Sharpness II) and (Sharpness II + Sharpness II = Sharpness III)
+      Действия включают:
+      largest = Используйте самое большое из двух чар, если два объединены. (Sharpness I + Sharpness III = Sharpness III)
+      combine = Сложите уровни чар вместе (Sharpness I + Sharpness III = Sharpness IV)
+      anvil   = Комбинируйте чары, похожие на наковальни (Sharpness I + Sharpness II = Sharpness II) и (Sharpness II + Sharpness II = Sharpness III)
 
 </span>
 
-    Setting to 'false' or 'remove' will disable the flag.
+    Установка значения  'false' или 'remove' отключит флаг.
 
-    <b>Examples:</b>
+    <b>Примеры:</b>
       @applyenchantment
-      @applyenchantment resultaction combine // Combines the levels with the resulting item's enchants
-      @applyenchantment ingredientaction combine | ignorelevels | onlybooks // Combines all ingredients levels from books while allowing higher than vanilla allowed enchants
+      @applyenchantment resultaction combine // Комбинирует уровни с чарами полученного предмета
+      @applyenchantment ingredientaction combine | ignorelevels | onlybooks // Сочетает в себе все уровни ингредиентов из книг, позволяя использовать чары выше, чем разрешено ванили.
 
-    <b>Aliases:</b> @applyenchant, @applyenchantments, @applyenchants
+    <b>Псевдонимы:</b> @applyenchant, @applyenchantments, @applyenchants
 </pre>
     </div>
     <div class='doc-section__group'>
-        <a href='#contents' class='back-to-top'>^ Contents</a><a id='banneritem'></a>
-        <h3 class='doc-section__title'>@banneritem &lt;basecolor&gt; | [pattern] &lt;color&gt; | [...]</h3>
+        <a href='#contents' class='back-to-top'>^ СОДЕРЖАНИЕ</a><a id='banneritem'></a>
+        <h3 class='doc-section__title'>@banneritem &lt;базовый цвет&gt; | [шаблон] &lt;цвет&gt; | [...]</h3>
         <pre>
-    <span class='flagtype flagtype-ingredient'>Ingredient</span><span class='flagtype flagtype-result'>Result</span>
+    <span class='flagtype flagtype-ingredient'>Ингредиент</span><span class='flagtype flagtype-result'>Результат</span>
 
 <span>
-    Creates a custom banner
-    Using this flag more than once will overwrite the previous one.
+    Создает собственный баннер
+    Использование этого флага более одного раза приведет к перезаписи предыдущего.
 
-    The &lt;basecolor&gt; argument is required
-      Values: white, orange, magenta, light_blue, yellow, lime, pink, gray, light_gray, cyan, purple, blue, brown, green, red, black
+    Цвет  &lt;базовый цвет&gt; требуется аргумент
+    Значения: белый, оранжевый, пурпурный, светло-синий, желтый, салатовый, розовый, серый, светло-серый, голубой, фиолетовый, синий, коричневый, зеленый, красный, черный.
 
-    Patterns can be added after the base color and are separated by the '|' character
-      [pattern] is the banner pattern type
-        Values: <a href='name index.html#bannerpattern'>name index.html#bannerpattern</a>
-      &lt;color&gt; is required for each pattern, color values are the same as &lt;basecolor&gt;
-      Multiple patterns can be added
+    Узоры могут быть добавлены после основного цвета и разделены знаком '|' персонаж
+      [шаблон] - тип шаблона баннера.
+        Имя значения: <a href='name index.html#bannerpattern'> index.html#bannerpattern</a>
+      &lt;цвет&gt; требуется для каждого рисунка, значения цвета такие же, как &lt;базовый цвет&gt;
+      Можно добавить несколько узоров
 </span>
 
-    Setting to 'false' or 'remove' will disable the flag.
+    Установка значения 'false' или 'remove' отключит флаг.
 
-    <b>Examples:</b>
+    <b>Примеры:</b>
       @banneritem black
       @banneritem red | circle_middle blue | skull yellow
       @banneritem green | half_horizontal yellow | circle_middle orange
 
-    <b>Aliases:</b> @banner
+    <b>Псевдонимы:</b> @banner
 </pre>
     </div>
     <div class='doc-section__group'>
-        <a href='#contents' class='back-to-top'>^ Contents</a><a id='biome'></a>
-        <h3 class='doc-section__title'>@biome &lt;types&gt; | [fail message]</h3>
+        <a href='#contents' class='back-to-top'>^ СОДЕРЖАНИЕ</a><a id='biome'></a>
+        <h3 class='doc-section__title'>@biome &lt;типы&gt; | [сообщение об ошибке]</h3>
         <pre>
-    <span class='flagtype flagtype-recipe'>Recipe</span><span class='flagtype flagtype-result'>Result</span>
+    <span class='flagtype flagtype-recipe'>Recipe</span><span class='flagtype flagtype-result'>Результат</span>
 
 <span>
-    Sets the biome required to allow crafting.
-    Using this flag more than once will overwrite the previous one.
+    Устанавливает биом, необходимый для создания предметов.
+    Использование этого флага более одного раза приведет к перезаписи предыдущего..
 
-    For '&lt;types&gt;' you can list the biomes you want to allow or disallow.
-    It needs at least one biome name and you can add more separated by , character.
-    Also you can disallow biomes by prefixing them with ! character.
-    Biomes: <a href='name index.html#biomes'>name index.html#biomes</a>
+    Для  '&lt;типы&gt;' вы можете указать биомы, которые хотите разрешить или запретить.
+    Требуется хотя бы одно имя биома, и вы можете добавить другие, разделенные символом.
+    Также вы можете запретить биомы, поставив перед ними префикс! character.
+    Имена Биомов: <a href='name index.html#biomes'> index.html#biomes</a>
 </span>
 
-    Setting to 'false' or 'remove' will disable the flag.
+    Установка значения 'false' или 'remove' отключит флаг.
 
-    <b>Examples:</b>
+    <b>Примеры:</b>
       @biome jungle, jungle_hills
       @biome !mushroom_fields, !mushroom_field_shore
 </pre>
     </div>
     <div class='doc-section__group'>
-        <a href='#contents' class='back-to-top'>^ Contents</a><a id='blockpowered'></a>
+        <a href='#contents' class='back-to-top'>^ СОДЕРЖАНИЕ</a><a id='blockpowered'></a>
         <h3 class='doc-section__title'>@blockpowered [arguments]</h3>
         <pre>
-    <span class='flagtype flagtype-recipe'>Recipe</span><span class='flagtype flagtype-result'>Result</span>
+    <span class='flagtype flagtype-recipe'>Рецепт приготовления</span><span class='flagtype flagtype-result'>Результат</span>
 
 <span>
-    Requires the workbench or furnace block to be powered by redstone.
+    Требуется, чтобы верстак или печь питались от красного камня.
 
-    Optionally you can use the following arguments separated by | character and in any order:
-      indirect          = check for indirect redstone power, through other blocks.
-      failmsg &lt;message&gt; = overwrite the failure message.
+    При желании вы можете использовать следующие аргументы, разделенные знаком | характер и в любом порядке:
+      indirect          = проверьте косвенную силу красного камня через другие блоки.
+      failmsg &lt;message&gt; = перезаписать сообщение об ошибке.
 </span>
 
-    Setting to 'false' or 'remove' will disable the flag.
+    Установка значения 'false' или 'remove' отключит флаг.
 
-    <b>Examples:</b>
+    <b>Примеры:</b>
       @blockpowered
       @blockpowered failmsg &lt;red&gt;&lt;bold&gt;YOU HAVE NO (indirect) POWAAH!!! | indirect
 
-    <b>Aliases:</b> @poweredblock, @blockpower, @redstonepowered
+    <b>Псевдонимы:</b> @poweredblock, @blockpower, @redstonepowered
 </pre>
     </div>
     <div class='doc-section__group'>
-        <a href='#contents' class='back-to-top'>^ Contents</a><a id='bookitem'></a>
+        <a href='#contents' class='back-to-top'>^ СОДЕРЖАНИЕ</a><a id='bookitem'></a>
         <h3 class='doc-section__title'>@bookitem title [text]</h3>
         <h3 class='doc-section__title'>@bookitem author [text]</h3>
         <h3 class='doc-section__title'>@bookitem generation &lt;generation&gt;</h3>
         <h3 class='doc-section__title'>@bookitem addpage [text]</h3>
         <pre>
-    <span class='flagtype flagtype-ingredient'>Ingredient</span><span class='flagtype flagtype-result'>Result</span>
+    <span class='flagtype flagtype-ingredient'>Ингредиент</span><span class='flagtype flagtype-result'>Результат</span>
 
 <span>
-    Changes book's contents.
-    Using this flag more than once will configure the same flag.
+    Изменяет содержание книги.
+    Использование этого флага более одного раза приведет к настройке одного и того же флага.
 
-    Supports colors and format (e.g. &lt;red&gt;, &lt;blue&gt;, &amp;4, &amp;F, etc).
+    Поддерживает цвета и формат (e.g. &lt;red&gt;, &lt;blue&gt;, &amp;4, &amp;F, etc).
 
-    Use 'title &lt;text&gt;' and 'author &lt;text&gt;' only on written books, it doesn't work on book and quill therefore they're optional.
-    Title and author must not exceed 64 characters, colors included (2 chars each).
+    Используйте заголовок 'title &lt;text&gt;' и 'author &lt;text&gt;' олько для письменных книг, он не работает с книгой и пером, поэтому они не являются обязательными.
+    Название и автор не должны превышать 64 символа, включая цвета (по 2 символа).
+    Название и автор не должны превышать 64 символа, включая цвета (по 2 символа).
 
-    Use generation &lt;generation&gt; to set the book's generation. Defaults to ORIGINAL
+    Используйте генерацию &lt;generation&gt; установить поколение книги. По умолчанию ОРИГИНАЛ
       &lt;generation&gt; values: original, copy_of_original, copy_of_copy, tattered
 
-    Use 'addpage &lt;text&gt;' to add a new page, the text can contain \n to add new lines to it, but it mainly word-wraps itself.
-    Page contents must not exceed 256 characters, colors (2 chars each) and new line (1 char each) included.
-    Optionally you can leave the text blank to add a blank page.
+    Используйте  'addpage &lt;text&gt;' чтобы добавить новую страницу, текст может содержать \ n для добавления к нему новых строк, но в основном это перенос слов.
+    Содержание страницы не должно превышать 256 символов, включая цвета (по 2 символа) и новую строку (по 1 символу).
+    При желании вы можете оставить текст пустым, чтобы добавить пустую страницу.
 
-    Supported items: written book, book and quill.
+    Поддерживаемые предметы: письменная книга, книга и перо.
 
-    Allows quotes to prevent spaces being trimmed.
+    Позволяет использовать кавычки для предотвращения удаления пробелов.
 </span>
 
-    Setting to 'false' or 'remove' will disable the flag.
+    Установка значения 'false' или 'remove'  отключит флаг.
 
-    <b>Examples:</b>
+    <b>Примеры:</b>
       @bookitem title The Art of Stealing
       @bookitem author Gray Fox
       @bookitem generation COPY_OF_ORIGINAL
       @bookitem addpage &lt;bold&gt;O&lt;reset&gt;nce upon a time...
       @bookitem addpage // added blank page
       @bookitem addpage \n\n\n\n&lt;italic&gt;      The End.
-      @bookitem title &quot; The Art of Stealing &quot; // Quotes at the beginning and end will be removed, but spaces will be kept.
+      @bookitem title &quot; The Art of Stealing &quot; // Цитаты в начале и конце будут удалены, но оставлены пробелы.
       @bookitem author &quot;   Gray Fox   &quot;
       @bookitem addpage &quot; &lt;bold&gt;O&lt;reset&gt;nce upon a time... &quot;
 
-    <b>Aliases:</b> @book
+    <b>Псевдонимы:</b> @book
 </pre>
     </div>
     <div class='doc-section__group'>
-        <a href='#contents' class='back-to-top'>^ Contents</a><a id='broadcast'></a>
-        <h3 class='doc-section__title'>@broadcast &lt;text&gt; | [permission]</h3>
+        <a href='#contents' class='back-to-top'>^ СОДЕРЖАНИЕ</a><a id='broadcast'></a>
+        <h3 class='doc-section__title'>@broadcast &lt;текст&gt; | [разрешение]</h3>
         <pre>
-    <span class='flagtype flagtype-recipe'>Recipe</span><span class='flagtype flagtype-result'>Result</span>
+    <span class='flagtype flagtype-recipe'>Рецепт приготовления</span><span class='flagtype flagtype-result'>Результат</span>
 
 <span>
-    Prints a chat message for all online players.
-    Using this flag more than once will overwrite the previous message.
+    Распечатывает сообщение чата для всех онлайн-игроков.
+    Использование этого флага более одного раза приведет к перезаписи предыдущего сообщения.
 
-    Optionally you can set a permission node that will define who sees the message.
+    При желании вы можете установить узел разрешений, который будет определять, кто видит сообщение.
 
-    Colors are supported (&lt;red&gt;, &amp;5, etc).
-    You can also use these variables:
-      {player}         = crafter's name or '(nobody)' if not available
-      {playerdisplay}  = crafter's display name or '(nobody)' if not available
-      {result}         = the result item name or '(nothing)' if recipe failed.
-      {recipename}     = recipe's custom or autogenerated name or '(unknown)' if not available
-      {recipetype}     = recipe type or '(unknown)' if not available
-      {inventorytype}  = inventory type or '(unknown)' if not available
-      {world}          = world name of event location or '(unknown)' if not available
-      {x}              = event location's X coord or '(?)' if not available
-      {y}              = event location's Y coord or '(?)' if not available
-      {z}              = event location's Z coord or '(?)' if not available
-        Relative positions are supported: {x-1},{y+7},{z+12}
-      {rand #1-#2}     = output a random integer between #1 and #2. Example: {rand 5-10} will output an integer from 5-10
-      {rand #1-#2, #3} = output a random number between #1 and #2, with decimal places of #3. Example: {rand 1.5-2.5, 2} will output a number from 1.50 to 2.50
-      {rand n}         = reuse a random output, where n is the nth {rand} in a recipe used excluding this format
+    Поддерживаются цвета (&lt;red&gt;, &amp;5, etc).
+    Вы также можете использовать эти переменные:
+      {player}         = имя мастера или '(nobody)' если недоступно
+      {playerdisplay}  = отображаемое имя мастера или '(nobody)' если недоступно
+      {result}         = имя элемента результата или '(nothing)' если рецепт не удался.
+      {recipename}     = пользовательское или автоматически созданное название рецепта или '(unknown)' если недоступно
+      {recipetype}     = тип рецепта или '(unknown)' если недоступно
+      {inventorytype}  = тип инвентаря или '(unknown)' если недоступно
+      {world}          = мировое название места проведения мероприятия или '(unknown)' если недоступно
+      {x}              = место проведения мероприятия's X coord or '(?)' если недоступно
+      {y}              = место проведения мероприятия's Y coord or '(?)' если недоступно
+      {z}              = место проведения мероприятия's Z coord or '(?)' если недоступно
+        Поддерживаются относительные позиции: {x-1},{y+7},{z+12}
+      {rand #1-#2}     = вывести случайное целое число от # 1 до # 2. Пример: {rand 5-10} выведет целое число от 5 до 10.
+      {rand #1-#2, #3} = вывести случайное число от # 1 до # 2 с десятичными знаками # 3. Пример: {rand 1.5-2.5, 2} выведет число от 1,50 до 2,50.
+      {rand n}         = повторно использовать случайный вывод, где n - nth {rand} в рецепте, исключая этот формат
 
-    Allows quotes to prevent spaces being trimmed.
+    Позволяет использовать кавычки для предотвращения удаления пробелов.
 </span>
 
-    Setting to 'false' or 'remove' will disable the flag.
+    Установка значения 'false' или 'remove' отключит флаг.
 
-    <b>Examples:</b>
+    <b>Примеры:</b>
       @broadcast {playerdisplay} &lt;green&gt;crafted something!
       @broadcast '{player}' crafted '{recipename}' at {world}: {x}, {y}, {z} | ranks.admins
-      @broadcast &quot;  Extra space  &quot; // Quotes at the beginning and end will be removed, but spaces will be kept.
+      @broadcast &quot;  Extra space  &quot; // Цитаты в начале и конце будут удалены, но оставлены пробелы.
 
-    <b>Aliases:</b> @announce, @msgall
+    <b>Псевдонимы:</b> @announce, @msgall
 </pre>
     </div>
     <div class='doc-section__group'>
-        <a href='#contents' class='back-to-top'>^ Contents</a><a id='bundleitem'></a>
+        <a href='#contents' class='back-to-top'>^ СОДЕРЖАНИЕ</a><a id='bundleitem'></a>
         <h3 class='doc-section__title'>@bundleitem &lt;item&gt;[:data][:amount]</h3>
         <h3 class='doc-section__title'>@bundleitem item:&lt;name&gt;</h3>
         <pre>
-    <span class='flagtype flagtype-ingredient'>Ingredient</span><span class='flagtype flagtype-result'>Result</span>
+    <span class='flagtype flagtype-ingredient'>Ингредиент</span><span class='flagtype flagtype-result'>Результат</span>
 
 <span>
-    {flag} Adds a stack of items to a bundle.
-    This flag can be used more than once to add more items to bundle.
+    {flag} Добавляет стак предметов в набор.
+    Этот флаг можно использовать более одного раза, чтобы добавить больше элементов в набор.
 
-    You can use a predefined item from an item recipe:
+    Вы можете использовать предопределенный предмет из рецепта предмета:
       Format = item:&lt;name&gt;
-      &lt;name&gt; = The name of an item recipe defined before this flag.
+      &lt;name&gt; = Название рецепта предмета, определенного перед этим флагом.
 </span>
 
-    Setting to 'false' or 'remove' will disable the flag.
+    Установка значения 'false' или 'remove' отключит флаг.
 
-    <b>Examples:</b>
-      @bundleitem dirt:0:40 // Add 40 dirt
-      @bundleitem diamond_sword:1500 // Add an almost destroyed diamond_sword
-      @bundleitem item:test sword // Will use the item from the 'test sword' recipe, assuming it's defined.
+    <b>Примеры:</b>
+      @bundleitem dirt:0:40 // Добавить 40 земли
+      @bundleitem diamond_sword:1500 // Добавьте почти разрушенный diamond_sword
+      @bundleitem item:test sword // Будет использовать предмет из рецепта  'test sword' если он определен.
 
-    <b>Aliases:</b> @bundle
+    <b>Псевдонимы:</b> @bundle
 </pre>
     </div>
     <div class='doc-section__group'>
-        <a href='#contents' class='back-to-top'>^ Contents</a><a id='cloneingredient'></a>
+        <a href='#contents' class='back-to-top'>^ СОДЕРЖАНИЕ</a><a id='cloneingredient'></a>
         <h3 class='doc-section__title'>@cloneingredient &lt;arguments&gt;</h3>
         <pre>
-    <span class='flagtype flagtype-result'>Result</span>
+    <span class='flagtype flagtype-result'>Результат</span>
 
 <span>
-    Clones the ingredient matching material of the result used on.
-    Using this flag more than once will overwrite the previous one.
+    Клонирует ингредиент, соответствующий материалу используемого результата.
+    Использование этого флага более одного раза приведет к перезаписи предыдущего.
 
-    As '&lt;arguments&gt;' you must define at least one feature to copy from the ingredient to the result.
-    Arguments can be one or more of the following, separated by | character:
-      data [&lt;mod&gt; &lt;value&gt;]                   = copy data value with optional modifier, &lt;mod&gt; can be +,-,/,* or % as math operator and &lt;value&gt; a number.
-      amount [&lt;mod&gt; &lt;value&gt;]                 = copy stack amount with optional modifier, &lt;mod&gt; can be +,-,/,* or % as math operator and &lt;value&gt; a number.
-      enchants                               = copies the enchantments.
-      name                                   = copies the custom item name.
-      lore [number or text or regex:pattern] = copies all the custom item lore/description unless conditions are added to copy specific lines.
-        [number]                             = copies only the lore on line number. More lore conditions can be added to copy more lines
-        [text]                               = copies any lore lines that contain the text
-        [regex:pattern]                      = copies any lore lines that match the regex pattern. Escape for '|' is a double '||'. Any double pipes will be converted back to single pipes for regex parsing.
-      special                                = copies item's special feature like leather armor color, firework effects, book contents, skull owner, etc.
-      allmeta                                = copies enchants, name, lore and special.
-      all                                    = copies entire item (data, amount, enchants, name, lore, special)
-      allowedtypes &lt;type, ...&gt;               = set material types other than the result type that can be cloned from
+    Как  '&lt;аргументы&gt;' вы должны определить по крайней мере одну функцию, которую нужно скопировать из ингредиента в результат.
+    Аргументы могут быть одним или несколькими из следующих, разделенных знаком |:
+      data [&lt;mod&gt; &lt;value&gt;]                   = копировать значение данных с необязательным модификатором &lt;mod&gt; может быть +,-,/,* или % as в качестве математического оператора и &lt;value&gt; число.
+      amount [&lt;mod&gt; &lt;value&gt;]                 = количество копий стопки с необязательным модификатором &lt;mod&gt; может быть +,-,/,* или % в качестве математического оператора и &lt;value&gt; число.
+      enchants                               = копирует чары.
+      name                                   = копирует имя настраиваемого элемента.
+      lore [number or text or regex:pattern] = копирует всю историю / описание настраиваемого предмета, если не добавлены условия для копирования определенных строк.
+        [number]                             = копирует только знания по номеру строки. Можно добавить больше условий истории, чтобы скопировать больше строк.
+        [text]                               = копирует любые строки истории, содержащие текст
+        [regex:pattern]                      = копирует любые строки знаний, соответствующие шаблону регулярного выражения. Побег за '|' является двойным '||'. Любые двойные каналы будут преобразованы обратно в одиночные каналы для синтаксического анализа регулярных выражений.
+      special                                = копирует особые характеристики предмета, такие как цвет кожаной брони, эффекты фейерверка, содержимое книги, череп владельца и т. д.
+      allmeta                                = копирует чары, имя, знания и спец.
+      all                                    = копирует весь предмет (данные, количество, чары, имя, знания, особые)
+      allowedtypes &lt;type, ...&gt;               = установить типы материалов, кроме типа результата, который можно клонировать из
+      ПРИМЕЧАНИЕ. Если материал результата присутствует в ингредиентах более одного раза, при использовании рецепта он клонирует детали первого элемента в сетке.
 
-    NOTE: If the result's material is present in the ingredients more than once, when using the recipe it will clone the details of first item in the grid.
-
-    To apply conditions for ingredients (ranged data values, specific names, etc) then you can use the @ingredientcondition flag too.
+      Чтобы применить условия для ингредиентов (ранжированные значения данных, конкретные имена и т. Д.), Вы также можете использовать флаг @ingredientcondition.
 </span>
 
-    Setting to 'false' or 'remove' will disable the flag.
+    Установка значения 'false' или 'remove' тключит флаг.
 
-    <b>Examples:</b>
-      @cloneingredient data // just copy data value
-      @cloneingredient data +2 // copy data value and add 2 to it
-      @cloneingredient amount * 2 // copy amount and multiply it by 2
-      @cloneingredient data % 2 // get the remainder from data divided by 2.
-      @cloneingredient data | amount | lore // only copy these things
-      @cloneingredient all // copy entire ingredient
-      @cloneingredient all | allowedtypes stone_axe, iron_axe // copy ingredients from the first ingredient that matches a stone axe, iron axe, or the result type
+    <b>Примеры:</b>
+      @cloneingredient data // просто скопируйте значение данных
+      @cloneingredient data +2 // скопировать значение данных и добавить к нему 2
+      @cloneingredient amount * 2 //скопируйте сумму и умножьте ее на 2
+      @cloneingredient data % 2 // получить остаток от деления данных на 2.
+      @cloneingredient data | amount | lore // только копируйте эти вещи
+      @cloneingredient all //скопировать весь ингредиент
+      @cloneingredient all | allowedtypes stone_axe, iron_axe // скопируйте ингредиенты из первого ингредиента, который соответствует каменному топору, железному топору или типу результата
 
-    <b>Aliases:</b> @clone, @copy, @copyingredient
+    <b>Псевдонимы:</b> @clone, @copy, @copyingredient
 </pre>
     </div>
     <div class='doc-section__group'>
-        <a href='#contents' class='back-to-top'>^ Contents</a><a id='command'></a>
+        <a href='#contents' class='back-to-top'>^ СОДЕРЖАНИЕ</a><a id='command'></a>
         <h3 class='doc-section__title'>@command &lt;text or false&gt;</h3>
         <pre>
-    <span class='flagtype flagtype-recipe'>Recipe</span><span class='flagtype flagtype-result'>Result</span>
+    <span class='flagtype flagtype-recipe'>Рецепт</span><span class='flagtype flagtype-result'>Результат</span>
 
 <span>
-    Executes the command when recipe is successful.
-    This flag can be used more than once to add more commands to the list.
+    Выполняет команду при успешном выполнении рецепта.
+    Этот флаг можно использовать более одного раза для добавления дополнительных команд в список.
 
-    Commands are executed server-side, if you add / prefix it will execute the command on the crafter.
+    Команды выполняются на стороне сервера, если вы добавите префикс /, он выполнит команду на верстаке.
 
-    You can also use these variables:
-      {player}         = crafter's name or '(nobody)' if not available
-      {playerdisplay}  = crafter's display name or '(nobody)' if not available
-      {result}         = the result item name or '(nothing)' if recipe failed.
-      {recipename}     = recipe's custom or autogenerated name or '(unknown)' if not available
-      {recipetype}     = recipe type or '(unknown)' if not available
-      {inventorytype}  = inventory type or '(unknown)' if not available
-      {world}          = world name of event location or '(unknown)' if not available
-      {x}              = event location's X coord or '(?)' if not available
-      {y}              = event location's Y coord or '(?)' if not available
-      {z}              = event location's Z coord or '(?)' if not available
-        Relative positions are supported: {x-1},{y+7},{z+12}
-      {rand #1-#2}     = output a random integer between #1 and #2. Example: {rand 5-10} will output an integer from 5-10
-      {rand #1-#2, #3} = output a random number between #1 and #2, with decimal places of #3. Example: {rand 1.5-2.5, 2} will output a number from 1.50 to 2.50
-      {rand n}         = reuse a random output, where n is the nth {rand} in a recipe used excluding this format
+    Вы также можете использовать эти переменные:
+      {player}         = имя игрока или  '(nobody)' если недоступно
+      {playerdisplay}  = отображаемое имя игрока или '(nobody)' если недоступно
+      {result}         = название элемента результата или '(nothing)' , если рецепт не удался.
+      {recipename}     = пользовательское или автоматически созданное название рецепта или '(unknown)' если недоступно
+      {recipetype}     = тип рецепта или '(unknown)' если недоступно
+      {inventorytype}  = тип инвентаря или '(unknown)' если недоступно
+      {world}          = мировое название места проведения мероприятия или '(unknown)' если недоступно
+      {x}              = координата X места события или '(?)' если недоступно
+      {y}              = координата Y места события или '(?)' если недоступно
+      {z}              = координата Z места события или '(?)' если недоступно
+        Поддерживаются относительные позиции: {x-1},{y+7},{z+12}
+      {rand #1-#2}     = вывести случайное целое число от # 1 до # 2. Пример: {rand 5-10} выведет целое число от 5 до 10.
+      {rand #1-#2, #3} = вывести случайное число от # 1 до # 2 с десятичными знаками # 3. Пример: {rand 1.5-2.5, 2} выведет число от 1,50 до 2,50.
+      {rand n}         = повторно использовать случайный вывод, где n - n-й {rand} в рецепте, исключая этот формат
 </span>
 
-    Setting to 'false' or 'remove' will disable the flag.
+    Установка значения  'false' или 'remove' отключит флаг.
 
-    <b>Examples:</b>
+    <b>Примеры:</b>
       @command /say I crafted {result}!
       @command kick {player}
 
-    <b>Aliases:</b> @cmd, @commands
+    <b>Псевдонимы:</b> @cmd, @commands
 </pre>
     </div>
     <div class='doc-section__group'>
-        <a href='#contents' class='back-to-top'>^ Contents</a><a id='compassitem'></a>
+        <a href='#contents' class='back-to-top'>^ СОДЕРЖАНИЕ</a><a id='compassitem'></a>
         <h3 class='doc-section__title'>@compassitem &lt;worldName&gt; &lt;x&gt; &lt;y&gt; &lt;z&gt; | [requiresLodestone]</h3>
         <pre>
-    <span class='flagtype flagtype-ingredient'>Ingredient</span><span class='flagtype flagtype-result'>Result</span>
+    <span class='flagtype flagtype-ingredient'>Ингредиент</span><span class='flagtype flagtype-result'>Результат</span>
 
 <span>
-    Sets the position that a compass points to.
+    Устанавливает положение, на которое указывает компас.
 
-    &lt;worldName&gt; is the name of the world you want to compass to work in.
+    &lt;worldName&gt; - это название мира, в котором вы хотите работать с компасом.
 
-    &lt;x&gt; &lt;y&gt; &lt;z&gt; are the x, y, and z coordinates you want to point to. &lt;y&gt; being the vertical only matters if you set requiresLodestone option to true
+    &lt;x&gt; &lt;y&gt; &lt;z&gt; - координаты x, y и z, на которые вы хотите указать. &lt;y&gt;  имеет значение только в том случае, если вы установили для параметра требует Lodestone значение true
 
-    The following variables may also be used
-      {world}          = world name of event location or '(unknown)' if not available
-      {x}              = event location's X coord
-      {y}              = event location's Y coord
-      {z}              = event location's Z coord
-        Relative positions are supported: {x-1},{y+7},{z+12}
-      {rand #1-#2}     = output a random integer between #1 and #2. Example: {rand 5-10} will output an integer from 5-10
-      {rand #1-#2, #3} = output a random number between #1 and #2, with decimal places of #3. Example: {rand 1.5-2.5, 2} will output a number from 1.50 to 2.50
-      {rand n}         = reuse a random output, where n is the nth {rand} in a recipe used excluding this format
+    Также могут использоваться следующие переменные
+      {world}          = мировое название места события или '(unknown)' если недоступно
+      {x}              = место проведения крафта по координате X
+      {y}              = место проведения крафта по координате Y
+      {z}              = место проведения крафта по координате Z
+        Поддерживаются относительные позиции: {x-1},{y+7},{z+12}
+      {rand #1-#2}     = вывести случайное целое число от # 1 до # 2. Пример: {rand 5-10} выведет целое число от 5 до 10.
+      {rand #1-#2, #3} = вывести случайное число от # 1 до # 2 с десятичными знаками # 3. Пример: {rand 1.5-2.5, 2} выведет число от 1,50 до 2,50.
+      {rand n}         = повторно использовать случайный вывод, где n - n-й{rand} в рецепте, исключая этот формат
 
-    [requiresLodestone] is optional and defaults to false:
-      Requires a lodestone at the location set
-      values: true or false
+    [requiresLodestone] не является обязательным и по умолчанию имеет значение false:
+      Требуется магнит в указанном месте.
+      значения: true или false
 
-    Specific items: compass.
+    Конкретные предметы: компас.
 </span>
 
-    Setting to 'false' or 'remove' will disable the flag.
+    Установка значения 'false' или 'remove' отключит флаг.
 
     <b>Examples:</b>
-      @compassitem world 100 65 200 // Will track this location without a lodestone
-      @compassitem world 100 65 200 | true // Requires a lodestone to be at x=100, y=65, z=200 for the compass to track this location
+      @compassitem world 100 65 200 // Отследит это место без магнитного камня
+      @compassitem world 100 65 200 | true //Требуется, чтобы магнитный камень находился в точке x = 100, y = 65, z = 200, чтобы компас мог отслеживать это местоположение.
 
-    <b>Aliases:</b> @compass
+    <b>Псевдонимы:</b> @compass
 </pre>
     </div>
     <div class='doc-section__group'>
@@ -563,120 +563,120 @@ title: Recipe Flags
         <h3 class='doc-section__title'>@cooldown &lt;number&gt;[suffix] | [arguments]</h3>
         <h3 class='doc-section__title'>@cooldown false</h3>
         <pre>
-    <span class='flagtype flagtype-recipe'>Recipe</span><span class='flagtype flagtype-result'>Result</span>
+    <span class='flagtype flagtype-recipe'>Рецепт</span><span class='flagtype flagtype-result'>Результат</span>
 
 <span>
-    Sets a cooldown time for crafting a recipe or result.
-    Once a recipe/result is used, the crafter can not craft it again for the specified amount of time.
-    If set on a result, the result will be unavailable to the crafter for the cooldown time but the rest of results and the recipe will work as before.
-    NOTE: cooldowns will be saved on server shutdown to maintain longer cooldowns.
+    Устанавливает время восстановления для создания рецепта или результата.
+    После использования рецепта / результата игрок не может создать его снова в течение указанного периода времени.
+    Если установлен результат, результат будет недоступен для игрока в течение времени восстановления, но остальные результаты и рецепт будут работать, как и раньше.
+    ПРИМЕЧАНИЕ: время восстановления будет сохранено при выключении сервера, чтобы поддерживать более длительное время восстановления.
 
-    The &lt;number&gt; argument must be a number, by default it's seconds.
-    The [suffix] argument defines what the &lt;number&gt; value is scaled in, values for suffix can be:
-      s  = for seconds (default)
-      m  = for minutes
-      h  = for hours
-      d  = for days
-    You can also use float values like '0.5m' to get 30 seconds.
+    Значок  &lt;number&gt; должен быть числом, по умолчанию это секунды.
+    Аргумент  [suffix] определяет, что  &lt;number&gt; значение масштабируется, значения суффикса могут быть:
+      s  = секунды (по умолчанию)
+      m  = минуты
+      h  = часы
+      d  = дни
+    Вы также можете использовать значения с плавающей запятой, такие как '0.5m' чтобы получить 30 секунд.
 
-    Optionally you can add some arguments separated by | character, those being:
-      global            = make the cooldown global instead of per-player.
-      msg &lt;text&gt;        = overwrites the information message; false to hide; supports colors; use {time} variable to display the new cooldown time.
-      failmsg &lt;text&gt;    = overwrites the failure message; false to hide; supports colors; use {time} variable to display the remaining time.
+    При желании вы можете добавить несколько аргументов, разделенных |, а именно:
+      global            = сделаете перезарядку глобальной, а не для каждого игрока.
+      msg &lt;text&gt;        = перезаписывает информационное сообщение; чтобы скрыть; поддерживает цвета; используйте переменную {time} для отображения нового времени восстановления.
+      failmsg &lt;text&gt;    = перезаписывает сообщение об ошибке; false чтобы скрыть; поддерживает цвета; используйте переменную {time} для отображения оставшегося времени.
 </span>
 
-    Setting to 'false' or 'remove' will disable the flag.
+    Установка значения 'false' или 'remove' отключит флаг.
 
-    <b>Examples:</b>
+    <b>Примеры:</b>
       @cooldown 30
-      @cooldown 30s // exactly the same as the previous flag
-      @cooldown 1.75m | failmsg &lt;red&gt;Usable in: {time} // 1 minute and 45 seconds or 1 minute and 75% of a minute.
-      @cooldown .5h | global | failmsg &lt;red&gt;Someone used this recently, wait: {time} | msg &lt;yellow&gt;Cooldown time: {time} // half an hour
+      @cooldown 30s // точно так же, как и предыдущий флаг
+      @cooldown 1.75m | failmsg &lt;red&gt;Usable in: {time} // 1 минута 45 секунд или 1 минута 75% минуты.
+      @cooldown .5h | global | failmsg &lt;red&gt;Someone used this recently, wait: {time} | msg &lt;yellow&gt;Cooldown time: {time} // полчаса
 
-    <b>Aliases:</b> @cooltime
+    <b>Псевдонимы:</b> @cooltime
 </pre>
     </div>
     <div class='doc-section__group'>
-        <a href='#contents' class='back-to-top'>^ Contents</a><a id='crossbowitem'></a>
+        <a href='#contents' class='back-to-top'>^ СОДЕРЖАНИЕ</a><a id='crossbowitem'></a>
         <h3 class='doc-section__title'>@crossbowitem &lt;item&gt;[:data][:amount]</h3>
         <h3 class='doc-section__title'>@crossbowitem item:&lt;name&gt;</h3>
         <pre>
-    <span class='flagtype flagtype-ingredient'>Ingredient</span><span class='flagtype flagtype-result'>Result</span>
+    <span class='flagtype flagtype-ingredient'>Ингредиент</span><span class='flagtype flagtype-result'>Результат</span>
 
 <span>
-    {flag} Adds a charged projectile to a crossbow.
-    This flag can be used more than once to add more charged projectiles.
-      NOTE: The item must be a valid crossbow projectile, such as an arrow or firework rocket.
+    {flag} Добавляет заряженный снаряд в арбалет.
+    Этот флаг можно использовать более одного раза, чтобы добавить больше заряженных снарядов.
+      ПРИМЕЧАНИЕ. Предмет должен быть действительным арбалетным снарядом, например стрелой или фейерверком.
 
-    You can use a predefined item from an item recipe:
+    Вы можете использовать предопределенный предмет из рецепта предмета:
       Format = item:&lt;name&gt;
-      &lt;name&gt; = The name of an item recipe defined before this flag.
+      &lt;name&gt; = Название рецепта предмета, определенного перед этим флагом.
 </span>
 
-    Setting to 'false' or 'remove' will disable the flag.
+    Установка значения 'false' или 'remove' отключит флаг.
 
-    <b>Examples:</b>
-      @crossbowitem arrow:0:40 // Add 40 arrows
-      @crossbowitem firework_rocket // Adds a firework rocket
-      @crossbowitem item:customrocket // Will use the item from the 'customrocket' recipe, assuming it's defined.
+    <b>Примеры:</b>
+      @crossbowitem arrow:0:40 // Добавить 40 стрел
+      @crossbowitem firework_rocket // Добавляет фейерверк
+      @crossbowitem item:customrocket // Будет использовать предмет из рецепта 'customrocket' если он определен.
 
-    <b>Aliases:</b> @crossbow
+    <b>Псевдонимы:</b> @crossbow
 </pre>
     </div>
     <div class='doc-section__group'>
-        <a href='#contents' class='back-to-top'>^ Contents</a><a id='custommodeldata'></a>
+        <a href='#contents' class='back-to-top'>^ СОДЕРЖАНИЕ</a><a id='custommodeldata'></a>
         <h3 class='doc-section__title'>@custommodeldata &lt;number&gt;</h3>
         <pre>
-    <span class='flagtype flagtype-ingredient'>Ingredient</span><span class='flagtype flagtype-result'>Result</span>
+    <span class='flagtype flagtype-ingredient'>Ингредиент</span><span class='flagtype flagtype-result'>Результат</span>
 
 <span>
-    Changes result's custom model data.
-    Used with custom datapacks
+    Изменяет результаты пользовательской модели данных.
+    Используется с пользовательскими датапаками
 </span>
 
-    Setting to 'false' or 'remove' will disable the flag.
+    Установка значения 'false' или 'remove' отключит флаг.  
 
-    <b>Examples:</b>
+    <b>Примеры:</b>
       @custommodeldata 7
       @custommodeldata 1234567
 
-    <b>Aliases:</b> @modeldata
+    <b>Псевдонимы:</b> @modeldata
 </pre>
     </div>
     <div class='doc-section__group'>
-        <a href='#contents' class='back-to-top'>^ Contents</a><a id='displayresult'></a>
+        <a href='#contents' class='back-to-top'>^ СОДЕРЖАНИЕ</a><a id='displayresult'></a>
         <h3 class='doc-section__title'>@displayresult &lt;item or first&gt; | [silentfail]</h3>
         <h3 class='doc-section__title'>@displayresult item:&lt;name&gt; | [silentfail]</h3>
         <pre>
-    <span class='flagtype flagtype-recipe'>Recipe</span>
+    <span class='flagtype flagtype-recipe'>Рецепт</span>
 
 <span>
-    Sets the display result of the recipe.
-    Using this flag more than once will overwrite the previous message.
+    Устанавливает результат отображения рецепта.
+    Использование этого флага более одного раза приведет к перезаписи предыдущего сообщения.
 
-    As 'item' argument you can define an item like in a result, material:data:amount.
-    Or you can set the item as 'first' to use the first display result available, very useful for multiple results having @ingredientcondition flag on them.
+    В качестве аргумента 'item' вы можете определить элемент, например, в результате, material:data:amount.
+    Или вы можете установить элемент как 'first' чтобы использовать первый доступный результат отображения, что очень полезно для нескольких результатов, на которых есть флаг @ingredientcondition.
 
-    Optionally, using 'silentfail' argument you can make the recipe print no result if it wouldn't give anything in the case of no results being allowed to craft (by other flags, like @ingredientcondition).
+    При желании, используя аргумент  'silentfail' вы можете сделать так, чтобы рецепт не выводил результат,  он ничего не даст в случае, если не разрешено создание результатов (другими флагами, такими как  @ingredientcondition).
 
-    NOTE: If there is no item to be displayed (all are secret or unavailable), using this with 'first' will not do anything.
-    NOTE: Can only be used on workbench recipes because it can not have effect on other recipes.
+    ПРИМЕЧАНИЕ. Если элемент для отображения отсутствует (все секретны или недоступны), использование этого параметра с параметром 'first' ичего не даст.
+    ПРИМЕЧАНИЕ. Может использоваться только в рецептах на верстаке, потому что не может повлиять на другие рецепты.
 </span>
 
-    Setting to 'false' or 'remove' will disable the flag.
+    Установка значения 'false' или 'remove' отключит флаг.    
 
-    <b>Examples:</b>
-      @displayresult first // displays the first available result
-      @displayresult diamond_helmet:120 // damaged diamond helmet
+    <b>Примеры:</b>
+      @displayresult first // отображает первый доступный результат
+      @displayresult diamond_helmet:120 // поврежденный алмазный шлем
 
-    <b>Aliases:</b> @resultdisplay, @showresult
+    <b>Псевдонимы:</b> @resultdisplay, @showresult
 </pre>
     </div>
     <div class='doc-section__group'>
-        <a href='#contents' class='back-to-top'>^ Contents</a><a id='enchantedbook'></a>
+        <a href='#contents' class='back-to-top'>^ СОДЕРЖАНИЕ</a><a id='enchantedbook'></a>
         <h3 class='doc-section__title'>@enchantedbook &lt;enchant&gt; [level or max]</h3>
         <pre>
-    <span class='flagtype flagtype-ingredient'>Ingredient</span><span class='flagtype flagtype-result'>Result</span>
+    <span class='flagtype flagtype-ingredient'>Ингредиент</span><span class='flagtype flagtype-result'>Результат</span>
 
 <span>
     Adds stored enchantments in a enchanted book item.
